@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TV4WAP LIVE4WAP</title>
+  <title>CineArena</title>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -27,7 +27,8 @@
             iframe.src = `https://tv4live.github.io/p14?mpd=${mpd}&keyId=${key1}&key=${key2}`;
 
           } else if (streamInfo.m3u8) {
-            iframe.src = streamInfo.m3u8;
+            const m3u8 = encodeURIComponent(streamInfo.m3u8);
+            iframe.src = `https://cinearena.live/hls-plyr.html?url=${m3u8}`;
           }
         });
     });
